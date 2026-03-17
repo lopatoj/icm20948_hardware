@@ -4,7 +4,7 @@
   <name>icm20948_ros2_control</name>
   <version>0.0.0</version>
   <description
-  >Provides ros2_control hardware interface for the ICM20948 IMU</description>
+  >Provides ros2_control sensor interface for the ICM20948 IMU</description>
   <maintainer email="justin@lopato.org">lopatoj</maintainer>
   <license>MIT</license>
 
