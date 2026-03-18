@@ -80,4 +80,4 @@ private:
 };
 } // namespace icm20948_ros2_control
 
-#endif // ICM20948_ROS2_CONTROL__ICM20948_HARDWARE_INTERFACE_HPP_
+#endif // ICM20948_ROS2_CONTROL__ICM20948_INTERFACE_HPP_

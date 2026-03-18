@@ -26,7 +26,7 @@ extern "C"
 #ifdef PORTDUINO
 #include <string.h>
 #else
-extern int memcmp(const void *, const void *, size_t); // Avoid compiler warnings
+// extern int memcmp(const void *, const void *, size_t); // Avoid compiler warnings
 #endif
 
 // Define if the DMP will be supported
