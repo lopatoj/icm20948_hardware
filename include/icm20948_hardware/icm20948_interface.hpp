@@ -1,5 +1,5 @@
-#ifndef ICM20948_ROS2_CONTROL__ICM20948_INTERFACE_HPP_
-#define ICM20948_ROS2_CONTROL__ICM20948_INTERFACE_HPP_
+#ifndef ICM20948_HARDWARE__ICM20948_INTERFACE_HPP_
+#define ICM20948_HARDWARE__ICM20948_INTERFACE_HPP_
 
 #include <array>
 #include <memory>
@@ -14,7 +14,7 @@
 
 #include "icm20948/ICM_20948_C.h"
 
-namespace icm20948_ros2_control {
+namespace icm20948_hardware {
 class ICM20948Interface : public hardware_interface::SensorInterface {
 public:
   RCLCPP_SHARED_PTR_DEFINITIONS(ICM20948Interface)
@@ -78,6 +78,6 @@ private:
    */
   static ICM_20948_Status_e i2c_read_cb(uint8_t regaddr, uint8_t *pdata, uint32_t len, void *user);
 };
-} // namespace icm20948_ros2_control
+} // namespace icm20948_hardware
 
-#endif // ICM20948_ROS2_CONTROL__ICM20948_INTERFACE_HPP_
+#endif // ICM20948_HARDWARE__ICM20948_INTERFACE_HPP_
