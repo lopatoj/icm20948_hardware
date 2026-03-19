@@ -1,7 +1,7 @@
-<library path="icm20948_ros2_control">
+<library path="icm20948_hardware">
   <class
-    name="icm20948_ros2_control/ICM20948Interface"
-    type="icm20948_ros2_control::ICM20948Interface"
+    name="icm20948_hardware/ICM20948Interface"
+    type="icm20948_hardware::ICM20948Interface"
     base_class_type="hardware_interface::SensorInterface"
   >
     <description>
