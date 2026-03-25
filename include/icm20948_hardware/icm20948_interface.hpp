@@ -1,18 +1,17 @@
 #ifndef ICM20948_HARDWARE__ICM20948_INTERFACE_HPP_
 #define ICM20948_HARDWARE__ICM20948_INTERFACE_HPP_
 
-#include <array>
-#include <memory>
+#include <cstdint>
 #include <string>
-#include <vector>
 
-#include "hardware_interface/handle.hpp"
-#include "hardware_interface/hardware_info.hpp"
 #include "hardware_interface/sensor_interface.hpp"
 #include "hardware_interface/types/hardware_interface_return_values.hpp"
 #include "rclcpp/macros.hpp"
 
 #include "icm20948/ICM_20948_C.h"
+
+#define GRAVITY 9.80665
+#define DEG_TO_RAD 0.017453292519943295
 
 namespace icm20948_hardware {
 class ICM20948Interface : public hardware_interface::SensorInterface {
@@ -32,8 +31,6 @@ public:
     const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
 private:
-  // I2C userspace fields
-
   /**
    * @brief File descriptor for the I2C device. Not initialized if -1.
    */
@@ -53,6 +50,14 @@ private:
    * @brief The name of the sensor, used for logging and identifying the sensor.
    */
   std::string sensor_name_;
+
+  bool use_dlpf_ = true;
+
+  uint8_t accel_range_ = 0;
+  uint8_t gyro_range_ = 0;
+
+  std::array<double, 3> accel_scales_;
+  std::array<double, 3> gyro_scales_;
 
   // ICM20948 structs
 
