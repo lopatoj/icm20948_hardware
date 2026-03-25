@@ -16,11 +16,7 @@ find_package(controller_interface REQUIRED)
 find_package(hardware_interface REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(realtime_tools REQUIRED)
-find_package(generate_parameter_library REQUIRED)
 
-generate_parameter_library(icm20948_interface_parameters
-  src/icm20948_interface_parameters.yaml
-)
 add_library(${PROJECT_NAME} SHARED
   src/icm20948_interface.cpp
   external/icm20948/ICM_20948_C.c
@@ -32,7 +28,6 @@ target_include_directories(${PROJECT_NAME} PUBLIC
   $<INSTALL_INTERFACE:include>
 )
 target_link_libraries(${PROJECT_NAME} PUBLIC
-                      icm20948_interface_parameters
                       controller_interface::controller_interface
                       hardware_interface::hardware_interface
                       pluginlib::pluginlib
